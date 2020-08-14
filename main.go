@@ -10,7 +10,7 @@ func main() {
 		//dbDDb       *sqlx.DB
 		Driver: "mysql",
 		User:   "root",
-		Pass:   "A212796619",
+		Pass:   "Abc@123456",
 		DbName: "mydb",
 	}
 	sql.Connect()

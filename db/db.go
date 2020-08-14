@@ -17,8 +17,8 @@ type Sql struct {
 }
 
 func (s *Sql) Connect() {
-	connectString := fmt.Sprintf("%s:%s@/%s", s.User, s.Pass, s.DbName)
-	sqlx.Open(s.Driver, connectString)
+	connectString := fmt.Sprintf("%s:%s@tcp(127.0.0.1:3306)/%s", s.User, s.Pass, s.DbName)
+	s.Db, _ = sqlx.Open(s.Driver, connectString)
 	if err := s.Db.Ping(); err != nil {
 		log.Error(err.Error())
 		return
